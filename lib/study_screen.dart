@@ -590,7 +590,10 @@ Widget _buildMusicSheet() {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Música", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          Text(
+            "Música",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
           SizedBox(height: 16),
 
           // Música interna
@@ -599,7 +602,7 @@ Widget _buildMusicSheet() {
             spacing: 8,
             children: _builtInTracks.map((t) {
               return ElevatedButton(
-                onPressed: () => _playInternal(t["path"]!),0
+                onPressed: () => _playInternal(t["path"]!),
                 child: Text(t["name"]!),
               );
             }).toList(),
@@ -607,7 +610,7 @@ Widget _buildMusicSheet() {
           SizedBox(height: 16),
 
           // Música del dispositivo
-          ElevatedButton.icon(10
+          ElevatedButton.icon(
             onPressed: _pickAndPlayExternal,
             icon: Icon(Icons.folder_open),
             label: Text("Elegir audio del dispositivo"),
@@ -640,7 +643,7 @@ Widget _buildMusicSheet() {
           SizedBox(height: 16), // padding extra para que no se corte
         ],
       ),
-    )
-    );
-  }
+    ),
+  );
+}
 }

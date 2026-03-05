@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'study_screen.dart';
-import 'agenda_screen.dart'; // <-- IMPORTA TU AGENDA
+import 'agenda_screen.dart'; // <-- importamos tu agenda
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -74,23 +74,19 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.pop(context);
   }
 
-  // -----------------------------------
-  // ABRIR FUNCIONALIDADES (incluyendo Agenda)
-  // -----------------------------------
   Future<void> _openFeature(String feature) async {
     if (feature == 'Estudio') {
       bool estudioCompletado = await Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => StudyScreen()),
       );
-
       if (estudioCompletado == true && _currentUser != null) {
         await _updateStreakAndPoints();
       }
     } else if (feature == 'Agenda') {
       await Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => AgendaScreen()), // <-- AGENDA
+        MaterialPageRoute(builder: (_) => AgendaScreen()), // <-- Agenda
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -115,8 +111,11 @@ class _HomeScreenState extends State<HomeScreen> {
     if (lastStudyTimestamp != null) {
       DateTime lastStudy = lastStudyTimestamp.toDate();
       Duration diff = now.difference(lastStudy);
-      if (diff.inHours >= 24) racha = 1;
-      else racha += 1;
+      if (diff.inHours >= 24) {
+        racha = 1;
+      } else {
+        racha += 1;
+      }
     } else {
       racha = 1;
     }
@@ -137,13 +136,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-          content: Text(
-              '¡Has ganado $puntosGanados puntos! Racha: $racha días 🚀')),
+        content: Text('¡Has ganado $puntosGanados puntos! Racha: $racha días 🚀'),
+      ),
     );
   }
 
-  Widget _buildStatCard(
-      IconData icon, String label, String value, Color color) {
+  Widget _buildStatCard(IconData icon, String label, String value, Color color) {
     return Flexible(
       child: Container(
         decoration: BoxDecoration(
@@ -207,23 +205,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Hola, $name!',
-                      style:
-                          TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+                      style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
                   SizedBox(height: 20),
                   Wrap(
                     spacing: 16,
                     runSpacing: 16,
                     children: [
-                      _buildStatCard(
-                          Icons.star, 'Puntos totales', '$totalPoints', Colors.amber),
-                      _buildStatCard(Icons.whatshot, 'Racha de estudio',
-                          '$studyStreak días', Colors.redAccent),
+                      _buildStatCard(Icons.star, 'Puntos totales', '$totalPoints', Colors.amber),
+                      _buildStatCard(Icons.whatshot, 'Racha de estudio', '$studyStreak días', Colors.redAccent),
                     ],
                   ),
                   SizedBox(height: 30),
                   Text('Funciones rápidas',
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                   SizedBox(height: 12),
                   GridView.count(
                     crossAxisCount: 2,
@@ -235,41 +229,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       ElevatedButton.icon(
                         icon: Icon(Icons.menu_book),
                         label: Text('Estudio'),
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(16),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                        ),
                         onPressed: () => _openFeature('Estudio'),
                       ),
                       ElevatedButton.icon(
                         icon: Icon(Icons.school),
                         label: Text('Profesor Virtual'),
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(16),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                        ),
                         onPressed: () => _openFeature('Profesor Virtual'),
                       ),
                       ElevatedButton.icon(
                         icon: Icon(Icons.event),
                         label: Text('Agenda'),
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(16),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                        ),
-                        onPressed: () => _openFeature('Agenda'), // <-- Ahora abre tu Agenda
+                        onPressed: () => _openFeature('Agenda'),
                       ),
                       ElevatedButton.icon(
                         icon: Icon(Icons.map),
                         label: Text('Mapas Mentales'),
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(16),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                        ),
                         onPressed: () => _openFeature('Mapas Mentales'),
                       ),
                     ],

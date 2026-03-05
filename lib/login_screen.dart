@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'register_screen.dart';
-import 'home_screen.dart';
+import 'home_screen.dart'; // pantalla principal de la app
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -163,9 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           child: _isLoading
-                              ? CircularProgressIndicator(
-                                  color: Colors.white,
-                                )
+                              ? CircularProgressIndicator(color: Colors.white)
                               : Text(
                                   "Iniciar Sesión",
                                   style: TextStyle(fontSize: 16),

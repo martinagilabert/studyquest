@@ -31,10 +31,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  firebase_core: ^4.2.1
-  cloud_firestore: ^6.1.0
-  firebase_auth: ^6.1.2
-  firebase_storage: ^13.0.4  
+  firebase_core: ^4.6.0
+  cloud_firestore: ^6.2.0
+  firebase_auth: ^6.3.0
+  firebase_storage: ^13.2.0
   flutter_local_notifications: ^19.4.2
   flutter_lints: ^6.0.0
   just_audio: ^0.10.5
@@ -42,6 +42,9 @@ dependencies:
   process_run: ^1.2.4
   table_calendar: ^3.2.0
   intl: ^0.20.2
+  syncfusion_flutter_calendar: ^32.1.23
+  timezone: ^0.10.0
+  material: ^1.0.1
 
   cupertino_icons: ^1.0.8
 

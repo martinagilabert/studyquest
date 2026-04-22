@@ -60,8 +60,6 @@ La app está pensada para ofrecer una experiencia visual, intuitiva y motivadora
 
 ## 📁 Estructura general del proyecto
 
-
-```text
 StudyQuest/
 ├─ lib/
 │  ├─ main.dart
@@ -84,7 +82,6 @@ StudyQuest/
 │
 └─ python_ai/
    └─ server.py
-```text
 
 ---
 

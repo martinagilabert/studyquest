@@ -91,4 +91,6 @@ El objetivo de StudyQuest es ofrecer una experiencia de estudio más completa, m
 
 ---
 
-Autor: Martina Versión: StudyQuest 1.1 Fecha: 2026-04-22
+- Autor: Martina
+- Versión: StudyQuest 1.1
+- Fecha: 2026-04-22

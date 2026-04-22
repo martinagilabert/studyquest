@@ -60,27 +60,30 @@ La app está pensada para ofrecer una experiencia visual, intuitiva y motivadora
 
 ## 📁 Estructura general del proyecto
 
-lib/
-  main.dart
-  home_screen.dart
-  study_screen.dart
-  agenda_screen.dart
-  settings_screen.dart
-  ai_chat_screen.dart
-  ai_chat_list_screen.dart
-  professor_virtual_home_screen.dart
-  professor_virtual_chats_screen.dart
-  professor_virtual_exams_screen.dart
-  professor_virtual_exam_take_screen.dart
-  professor_virtual_exam_history_screen.dart
-  professor_virtual_exam_review_screen.dart
-  ai_service.dart
-  services/
-    chat_firestore_service.dart
-    exam_firestore_service.dart
 
-python_ai/
-  server.py
+```text
+StudyQuest/
+├─ lib/
+│  ├─ main.dart
+│  ├─ home_screen.dart
+│  ├─ study_screen.dart
+│  ├─ agenda_screen.dart
+│  ├─ settings_screen.dart
+│  ├─ ai_chat_screen.dart
+│  ├─ ai_chat_list_screen.dart
+│  ├─ professor_virtual_home_screen.dart
+│  ├─ professor_virtual_chats_screen.dart
+│  ├─ professor_virtual_exams_screen.dart
+│  ├─ professor_virtual_exam_take_screen.dart
+│  ├─ professor_virtual_exam_history_screen.dart
+│  ├─ professor_virtual_exam_review_screen.dart
+│  ├─ ai_service.dart
+│  └─ services/
+│     ├─ chat_firestore_service.dart
+│     └─ exam_firestore_service.dart
+│
+└─ python_ai/
+   └─ server.py
 
 ---
 

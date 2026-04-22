@@ -1,4 +1,4 @@
-# StudyQuest 1.1
+# StudyQuest
 
 **StudyQuest 1.1** es una aplicación de estudio gamificada que ayuda al usuario a organizar su aprendizaje, realizar sesiones de estudio, interactuar con un profesor virtual con IA y generar exámenes tipo test a partir de sus conversaciones.
 

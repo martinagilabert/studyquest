@@ -84,6 +84,7 @@ StudyQuest/
 │
 └─ python_ai/
    └─ server.py
+```text
 
 ---
 

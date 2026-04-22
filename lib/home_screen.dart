@@ -5,6 +5,8 @@ import 'dart:math';
 import 'study_screen.dart';
 import 'agenda_screen.dart';
 import 'settings_screen.dart'; // Importante para la navegación
+import 'ai_chat_screen.dart';
+import 'professor_virtual_home_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -170,7 +172,13 @@ class _HomeScreenState extends State<HomeScreen> {
       await Navigator.push(context, MaterialPageRoute(builder: (_) => AgendaScreen()));
       await _completeChallenge('agenda');
     } else if (feature == 'Profesor Virtual') {
-       await _completeChallenge('virtual_prof');
+      bool? usoProfesor = await Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const ProfessorVirtualHomeScreen()),
+      );
+      if (usoProfesor == true) {
+        await _completeChallenge('virtual_prof');
+      }
     }
   }
 

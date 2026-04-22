@@ -45,7 +45,8 @@ dependencies:
   syncfusion_flutter_calendar: ^32.1.23
   timezone: ^0.10.0
   material: ^1.0.1
-
+  http: ^1.6.0
+  flutter_markdown: ^0.7.7  
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
